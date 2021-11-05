@@ -4,5 +4,5 @@ Re compile the code each time that the size of the file change
 
 ## Usage :
 ```bash
-./auto_compiler file_name
+gcc main.c -w && ./a.out 
 ```
