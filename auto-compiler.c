@@ -27,12 +27,13 @@ int main(int argc, char **argv){
 
     printf("\033[1;31m[1]\033[0m - C compiler \n");
     printf("\033[1;31m[2]\033[0m - C++ compiler \n");
-    printf("\033[1;31m[3]\033[0m - Flask \n\nauto > ");
+    printf("\033[1;31m[3]\033[0m - Flask \n");
+    printf("\033[1;31m[4]\033[0m - Rust compiler \n\nauto > ");
     
     
     scanf("%d",&input);
     
-    if(input != 0x01 && input != 0x02 && input != 0x03 ){ printf("\n\033[1;31m[!]\033[0m Please select one fo the options \n"); return -1; }
+    if(input != 0x01 && input != 0x02 && input != 0x03 && input != 0x04 ){ printf("\n\033[1;31m[!]\033[0m Please select one fo the options \n"); return -1; }
     
     dif(input);
     
@@ -62,9 +63,10 @@ void dif(int z){
     if (z==0x01){ snprintf(command, sizeof(command), "gcc %s -o z && ./z", x); }
     if (z==0x02){ snprintf(command, sizeof(command), "g++ %s -o z && ./z", x); }
     if (z==0x03){ snprintf(command, sizeof(command), "flask run &", x); }
+    if (z==0x04){ snprintf(command, sizeof(command), "rustc %s && ./main", x); }
     
 
-    printf("\n\033[1;31m****compiling****\033[0m\n");              
+    printf("\n\033[1;31m****compiling****\033[0m\n\n");              
     system(command);
     printf("\n\n");
 
@@ -78,7 +80,7 @@ void dif(int z){
         sizeN = lookup_size(x);
 
         if(sizeN != sizeO){
-            printf("\n\033[1;31m****Re compiling****\033[0m\n");              
+            printf("\n\033[1;31m****Re compiling****\033[0m\n\n");              
             system(command);
             printf("\n\n");
         }
